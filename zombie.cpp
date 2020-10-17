@@ -1,6 +1,9 @@
 #include <sys/types.h>
 #include <unistd.h>  
-void main()
+#include <cstdlib>
+#include <cstdio>
+using namespace std;
+int main()
 {
     pid_t pid; 
     pid=fork();

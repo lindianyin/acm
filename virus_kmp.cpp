@@ -40,7 +40,7 @@ int KMP(char * S,char * T){
 }
 
 
-main(int argc,char* argv[]){
+int main(int argc,char* argv[]){
 	char virus[] = "abcabc";
 	char vdna[4] = {0};
 	for(int i=0;i<3;i++){

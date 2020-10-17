@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <cstring>
+#include <algorithm>
 using namespace std;
 
 void Next(char*T,int *next){
@@ -41,7 +42,7 @@ int KMP(char * S,char * T){
 }
 
 
-main(int argc,char* argv[]){
+int main(int argc,char* argv[]){
 	cout << KMP("aabbacabaabc","aba")<<endl;
 	return 0;
 }

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
+#include <limits>
 #include "dbg-macro/dbg.h"
 using namespace std;
 class Solution{
