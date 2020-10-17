@@ -1,0 +1,43 @@
+[demo.cpp:19 (main)] ====== primitive types
+[demo.cpp:34 (main)] test_int = 42 (int)
+[demo.cpp:35 (main)] test_float = 3.14 (const float)
+[demo.cpp:36 (main)] test_bool = false (const bool)
+[demo.cpp:37 (main)] test_char = 'X' (const char)
+[demo.cpp:38 (main)] test_uint64_t = 12345678987654321 (const unsigned long)
+[demo.cpp:39 (main)] test_pointer = 0x7ffc6e6dd7ac (int*)
+[demo.cpp:40 (main)] test_pointer_to_const = 0x7ffc6e6dd7ac (const int*)
+[demo.cpp:41 (main)] test_pointer_null = nullptr (int*)
+[demo.cpp:42 (main)] test_ref_to_int = 42 (const int&)
+[demo.cpp:43 (main)] test_c_string = "hello" (const char*)
+[demo.cpp:44 (main)] hello
+[demo.cpp:45 (main)] test_string = "hello" (const std::string)
+[demo.cpp:47 (main)] ====== r-values, literals, constants, etc.
+[demo.cpp:49 (main)] 42 = 42 (int)
+[demo.cpp:50 (main)] 3.14 = 3.14 (double)
+[demo.cpp:51 (main)] false = false (bool)
+[demo.cpp:52 (main)] 12345678987654321 = 12345678987654321 (long)
+[demo.cpp:53 (main)] static_cast<void*>(nullptr) = nullptr (void*)
+[demo.cpp:54 (main)] string literal
+[demo.cpp:57 (main)] std::move(message) = "hello world" (std::string&&)
+[demo.cpp:59 (main)] sizeof(int) = 4 (unsigned long)
+[demo.cpp:61 (main)] ====== expressions inside macros
+[demo.cpp:63 (main)] 9 + 33 = 42 (int)
+[demo.cpp:64 (main)] test_string + " world" = "hello world" (std::string)
+[demo.cpp:66 (main)] ====== containers
+[demo.cpp:69 (main)] dummy_vec_int = {3, 2, 3} (const std::vector<int>)
+[demo.cpp:72 (main)] dummy_vec_int_nonconst = {1, 2, 3} (std::vector<int>)
+[demo.cpp:75 (main)] dummy_vec_empty = {} (const std::vector<int>)
+[demo.cpp:78 (main)] vec_chars = {'h', 'e', 'l', 'l', 'o', '\x00', '\xFE'} (std::vector<char>)
+[demo.cpp:81 (main)] vec_bools = {true, true, false, false, false, true, false} (std::vector<bool>)
+[demo.cpp:83 (main)] std::vector<int>{0, 1, 0, 1} = {0, 1, 0, 1} (std::vector<int>)
+[demo.cpp:86 (main)] dummy_array = {0, 4} (const std::array<int, 2ul>)
+[demo.cpp:89 (main)] dummy_list = {1, 2, 3, 4, 5, 6, 7, 8, 9} (const std::__cxx11::list<int>)
+[demo.cpp:92 (main)] vec_of_vec_of_ints = {{1, 2}, {3, 4, 5}} (std::vector<std::vector<int>>)
+[demo.cpp:96 (main)] vec_of_vec_of_vec_of_ints = {{{1, 2}, {3, 4, 5}}, {{3}}} (std::vector<std::vector<std::vector<int>>>)
+[demo.cpp:99 (main)] dummy_int_array = {11, 22, 33} (int [3])
+[demo.cpp:101 (main)] ====== std::tuple and std::pair
+[demo.cpp:102 (main)] std::tuple<std::string, int, float>{"Hello", 7, 3.14f} = {Hello, 7, 3.14} (std::tuple<std::string, int, float>)
+[demo.cpp:103 (main)] std::pair<std::string, int>{"Hello", 7} = {"Hello", 7} (std::pair<std::string, int>)
+[demo.cpp:112 (main)] ====== function name tests
+[demo.cpp:116 (some_method)] x = 42 (int)
+[demo.cpp:121 (operator())] called from within a lambda!

@@ -1,0 +1,104 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ANSI_DEBUG	dbg.h	/^  static constexpr const char* const ANSI_DEBUG = "\\x1b[02m";$/;"	m	class:dbg::DebugOutput
+ANSI_EMPTY	dbg.h	/^  static constexpr const char* const ANSI_EMPTY = "";$/;"	m	class:dbg::DebugOutput
+ANSI_EXPRESSION	dbg.h	/^  static constexpr const char* const ANSI_EXPRESSION = "\\x1b[36m";$/;"	m	class:dbg::DebugOutput
+ANSI_RESET	dbg.h	/^  static constexpr const char* const ANSI_RESET = "\\x1b[0m";$/;"	m	class:dbg::DebugOutput
+ANSI_TYPE	dbg.h	/^  static constexpr const char* const ANSI_TYPE = "\\x1b[32m";$/;"	m	class:dbg::DebugOutput
+ANSI_VALUE	dbg.h	/^  static constexpr const char* const ANSI_VALUE = "\\x1b[01m";$/;"	m	class:dbg::DebugOutput
+CATCH_CONFIG_MAIN	tests/main.cpp	1;"	d	file:
+DBG_MACRO_CXX_STANDARD	dbg.h	52;"	d
+DBG_MACRO_CXX_STANDARD	dbg.h	54;"	d
+DBG_MACRO_CXX_STANDARD	dbg.h	56;"	d
+DBG_MACRO_DBG_H	dbg.h	30;"	d
+DBG_MACRO_PRETTY_FUNCTION	dbg.h	82;"	d
+DebugOutput	dbg.h	/^  DebugOutput(const char* filepath,$/;"	f	class:dbg::DebugOutput
+DebugOutput	dbg.h	/^class DebugOutput {$/;"	c	namespace:dbg
+MAX_PATH_LENGTH	dbg.h	/^  static constexpr std::size_t MAX_PATH_LENGTH = 20;$/;"	m	class:dbg::DebugOutput
+PREFIX_LENGTH	dbg.h	/^static constexpr size_t PREFIX_LENGTH =$/;"	m	namespace:dbg::pretty_function
+SUFFIX_LENGTH	dbg.h	/^static constexpr size_t SUFFIX_LENGTH = sizeof("]") - 1;$/;"	m	namespace:dbg::pretty_function
+UDE_VALUE13	tests/basic.cpp	/^enum user_defined_enum { UDE_VALUE13 = 13, UDE_VALUE42 = 42 };$/;"	e	enum:user_defined_enum	file:
+UDE_VALUE42	tests/basic.cpp	/^enum user_defined_enum { UDE_VALUE13 = 13, UDE_VALUE42 = 42 };$/;"	e	enum:user_defined_enum	file:
+VALUE13	tests/basic.cpp	/^enum class user_defined_enum_class { VALUE13 = 13, VALUE42 = 42 };$/;"	m	class:user_defined_enum_class	file:
+VALUE42	tests/basic.cpp	/^enum class user_defined_enum_class { VALUE13 = 13, VALUE42 = 42 };$/;"	m	class:user_defined_enum_class	file:
+ansi	dbg.h	/^  const char* ansi(const char* code) const {$/;"	f	class:dbg::DebugOutput
+base	dbg.h	/^  int base;$/;"	m	struct:dbg::print_formatted
+begin	tests/basic.cpp	/^  const T* begin() const { return data; }$/;"	f	struct:user_defined_enum_class::user_defined_container
+data	tests/basic.cpp	/^  T data[N];$/;"	m	struct:user_defined_enum_class::user_defined_container	file:
+dbg	dbg.h	/^namespace dbg {$/;"	n
+dbg	dbg.h	612;"	d
+decltype	dbg.h	/^constexpr auto size(const T& c) -> decltype(c.size()) {$/;"	f	namespace:dbg::detail::__anon1
+detail	dbg.h	/^namespace detail {$/;"	n	namespace:dbg
+detail_detector	dbg.h	/^namespace detail_detector {$/;"	n	namespace:dbg
+detector	dbg.h	/^struct detector {$/;"	s	namespace:dbg::detail_detector
+detector	dbg.h	/^struct detector<Default, void_t<Op<Args...>>, Op, Args...> {$/;"	s	namespace:dbg::detail_detector
+end	tests/basic.cpp	/^  const T* end() const { return data + N; }$/;"	f	struct:user_defined_enum_class::user_defined_container
+factorial	tests/example.cpp	/^int factorial(int n) {$/;"	f
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<long>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<print_formatted<T>>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<short>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<std::string>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<unsigned long>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^inline std::string get_type_name(type_tag<unsigned short>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^std::string get_type_name(type_tag<T>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^std::string get_type_name(type_tag<std::pair<T1, T2>>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^std::string get_type_name(type_tag<std::tuple<T...>>) {$/;"	f	namespace:dbg
+get_type_name	dbg.h	/^std::string get_type_name(type_tag<std::vector<T, std::allocator<T>>>) {$/;"	f	namespace:dbg
+has_ostream_operator	dbg.h	/^struct has_ostream_operator : is_detected<ostream_operator_t, T> {};$/;"	s	namespace:dbg::detail
+hex	dbg.h	/^print_formatted<T> hex(T value) {$/;"	f	namespace:dbg
+identity	dbg.h	/^T&& identity(T&& t) {$/;"	f	namespace:dbg
+inner	dbg.h	/^  T inner;$/;"	m	struct:dbg::print_formatted
+isColorizedOutputEnabled	dbg.h	/^inline bool isColorizedOutputEnabled() {$/;"	f	namespace:dbg
+is_container	dbg.h	/^struct is_container {$/;"	s	namespace:dbg::detail
+m_expression	dbg.h	/^  const std::string m_expression;$/;"	m	class:dbg::DebugOutput
+m_filepath	dbg.h	/^  std::string m_filepath;$/;"	m	class:dbg::DebugOutput
+m_function_name	dbg.h	/^  const std::string m_function_name;$/;"	m	class:dbg::DebugOutput
+m_line	dbg.h	/^  const int m_line;$/;"	m	class:dbg::DebugOutput
+m_use_colorized_output	dbg.h	/^  const bool m_use_colorized_output;$/;"	m	class:dbg::DebugOutput
+main	tests/demo.cpp	/^int main() {$/;"	f
+main	tests/example.cpp	/^int main() {$/;"	f
+nonesuch	dbg.h	/^struct nonesuch {$/;"	s	namespace:dbg::detail_detector
+oct	dbg.h	/^print_formatted<T> oct(T value) {$/;"	f	namespace:dbg
+operator <<	tests/basic.cpp	/^std::ostream& operator<<(std::ostream& out, const user_defined_type& v) {$/;"	f
+operator T	dbg.h	/^  operator T() const { return inner; }$/;"	f	struct:dbg::print_formatted
+prefix	dbg.h	/^  const char* prefix() const {$/;"	f	struct:dbg::print_formatted
+pretty_function	dbg.h	/^namespace pretty_function {$/;"	n	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, P* const& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const bool& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const char (&value)[N]) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const char& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const char* const& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const std::optional<T>& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const std::pair<T1, T2>& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const std::string& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const std::tuple<>&) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, const std::tuple<Ts...>& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream, std::shared_ptr<T>& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline bool pretty_print(std::ostream& stream,$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline void pretty_print(std::ostream& stream, const T& value, std::true_type) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^inline void pretty_print(std::ostream&, const T&, std::false_type) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^pretty_print(std::ostream& stream, Enum const& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^pretty_print(std::ostream& stream, const Container& value) {$/;"	f	namespace:dbg
+pretty_print	dbg.h	/^pretty_print(std::ostream& stream, const T& value) {$/;"	f	namespace:dbg
+pretty_print	tests/basic.cpp	/^std::string pretty_print(T&& value) {$/;"	f
+pretty_print_tuple	dbg.h	/^struct pretty_print_tuple {$/;"	s	namespace:dbg
+pretty_print_tuple	dbg.h	/^struct pretty_print_tuple<0> {$/;"	s	namespace:dbg
+print	dbg.h	/^  T&& print(const std::string& type, T&& value) const {$/;"	f	class:dbg::DebugOutput
+print	dbg.h	/^  static void print(std::ostream& stream, const std::tuple<Ts...>& tuple) {$/;"	f	struct:dbg::pretty_print_tuple
+print_formatted	dbg.h	/^  print_formatted(T value, int numeric_base)$/;"	f	struct:dbg::print_formatted
+print_formatted	dbg.h	/^struct print_formatted {$/;"	s	namespace:dbg
+size	tests/basic.cpp	/^  std::size_t size() const { return N; }$/;"	f	struct:user_defined_enum_class::user_defined_container
+type_list_to_string	dbg.h	/^std::string type_list_to_string() {$/;"	f	namespace:dbg
+type_name	dbg.h	/^std::string type_name() {$/;"	f	namespace:dbg
+type_name_impl	dbg.h	/^const char* type_name_impl() {$/;"	f	namespace:dbg
+type_tag	dbg.h	/^struct type_tag {};$/;"	s	namespace:dbg
+user_defined_container	tests/basic.cpp	/^struct user_defined_container {$/;"	s	class:user_defined_enum_class	file:
+user_defined_enum	tests/basic.cpp	/^enum user_defined_enum { UDE_VALUE13 = 13, UDE_VALUE42 = 42 };$/;"	g	file:
+user_defined_enum_class	tests/basic.cpp	/^enum class user_defined_enum_class { VALUE13 = 13, VALUE42 = 42 };$/;"	c	file:
+user_defined_type	tests/basic.cpp	/^struct user_defined_type {$/;"	s	file:
+value	dbg.h	/^  static constexpr bool value =$/;"	m	struct:dbg::detail::is_container
+x	tests/basic.cpp	/^  int x;$/;"	m	struct:user_defined_type	file:
