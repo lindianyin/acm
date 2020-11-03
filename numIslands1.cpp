@@ -9,51 +9,43 @@
 using namespace std;
 class Solution{
 public:
-	void DFS(vector<vector<char>>& grid,pair<int,int> cur, set<pair<int,int>>& visited) {
-		int i = cur.first;
-		int j = cur.second;    
-		if(grid[i][j] == '0'){
-			return;
-		}
-		if(i-1>=0){
-			if(0 == visited.count({i-1,j})){
-				visited.insert({i-1,j});
-				DFS(grid,{i-1,j},visited);	
-			}
-		}
-		if(j-1>=0){
-			if(0 == visited.count({i,j-1})){
-				visited.insert({i,j-1});
-				DFS(grid,{i,j-1},visited);	
-			}
-		}
-		if((i+1) < grid.size()){
-			if(0 == visited.count({i+1,j})){
-				visited.insert({i+1,j});
-				DFS(grid,{i+1,j},visited);	
-			}
-		}
-		if((j+1) < grid[i].size()){
-			if(0 == visited.count({i,j+1})){
-				visited.insert({i,j+1});
-				return DFS(grid,{i,j+1},visited);	
-			}
-		}
-    	return;
-    }
     int numIslands(vector<vector<char>>& grid) {
-		set<pair<int,int>> visited;
 		int cnt = 0;
 		for(int i = 0;i<grid.size();i++){
 			for(int j = 0;j<grid[i].size();j++){
-				if(grid[i][j] == '1' && visited.count({i,j}) == 0){
-					DFS(grid,{i,j},visited);
+				if(grid[i][j] == '1'){
 					cnt++;
+					grid[i][j] = '0';
+					deque<pair<int,int>> que;
+					que.push_back({i,j});
+					while(!que.empty()){
+						pair<int,int> cur = que.front();
+						dbg(cur);
+						int ci = cur.first;
+						int cj = cur.second;
+						que.pop_front();
+						if(ci-1>=0 && grid[ci-1][cj] == '1'){
+							que.push_back({ci-1,cj});
+							grid[ci-1][cj] = '0';
+						}
+						if(cj+1<grid[i].size() && grid[ci][cj+1] == '1'){
+							que.push_back({ci,cj+1});
+							grid[ci][cj+1] = '0';
+						}
+						if(ci+1 < grid.size() && grid[ci+1][cj] == '1'){
+							que.push_back({ci+1,cj});
+							grid[ci+1][cj] = '0';
+						}
+						if(cj-1 >=0 && grid[ci][cj-1] == '1'){
+							que.push_back({ci,cj-1});
+							grid[ci][cj-1] = '0';
+						}
+					}
 				}
 			}
 		}
 		return cnt;
-    }
+    }	
 };
 
 int main(int argc,char* argv[]){

@@ -1,17 +1,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <stack>
 #include <algorithm>
 #include <limits>
-#include "dbg-macro/dbg.h"
+#include <cmath>
 using namespace std;
-class Solution{
-public:
-	
-};
-
 int main(int argc,char* argv[]){
-	dbg(1);
+	int r;
+	cin >> r;
+	cout.flags(ios::fixed);
+	cout.precision(7);
+	//cout << atan(1.0)*4*r*r<<endl;
+	cout << M_PI*r*r  << endl;
 	return 0;
 }

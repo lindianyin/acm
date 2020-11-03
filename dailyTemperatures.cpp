@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stack>
 #include <algorithm>
 #include <limits>
 #include "dbg-macro/dbg.h"
@@ -8,17 +9,18 @@ using namespace std;
 class Solution{
 public:
     vector<int> dailyTemperatures(vector<int>& T) {
-		vector<int> vec(T.size());
-		for(int i = 0;i<T.size();i++){
-			int current = T[i];
-			for(int j = i+1;j<T.size();j++){
-				if(T[j] > current){
-					vec[i] = (j-i);
-					break;
-				}
+		int n = T.size();
+		vector<int> ans(n);
+		stack<int> s;
+		for(int i = 0;i<n;i++){
+			while(!s.empty() && T[i] > T[s.top()]){
+				int previousIndex = s.top();
+				ans[previousIndex] = i - previousIndex;
+				s.pop();
 			}
+			s.push(i);
 		}
-		return vec;
+		return ans;
     }	
 };
 
