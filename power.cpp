@@ -11,16 +11,14 @@ using namespace std;
 long lpow(long m,long n,long mod){
 	if(n == 1)
 		return m;
+	int res = lpow(m*m%mod,n/2,mod);
 	if(n % 2 == 1)
-		return (lpow(m,n-1,mod) % mod) * (m % mod);
-	else
-		return (lpow(m,n/2,mod) % mod) * (lpow(m,n/2,mod) % mod);
-
+		res = res * m % mod;
+	return res;
 }
 
 
 int main(int argc,char* argv[]){
 	dbg(lpow(2,10,10));
-	dbg((long)pow(2,10) % 10);
 	return 0;
 }
