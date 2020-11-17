@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <limits>
 #include "dbg-macro/dbg.h"
+#include <string.h>
 using namespace std;
 
 #define M 1046527
