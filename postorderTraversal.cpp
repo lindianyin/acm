@@ -27,7 +27,7 @@ public:
 		postorder(node->right,result);
 		result.push_back(node->val);
 	}
-    vector<int> preorderTraversal(TreeNode* root) {
+    vector<int> postorderTraversal(TreeNode* root) {
 		vector<int> result;
 		postorder(root,result);
 		return result;
@@ -53,7 +53,7 @@ int main(int argc,char* argv[]){
 	f->right = g;
 	g->right = i;
 	i->left = h;
-	vector<int> result = s.preorderTraversal(f);
+	vector<int> result = s.postorderTraversal(f);
 	vector<char> out;
 	for(auto item : result)
 		out.push_back(item);
