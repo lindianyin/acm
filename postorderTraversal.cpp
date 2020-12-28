@@ -20,16 +20,16 @@ struct TreeNode {
 };
 class Solution {
 public:
-	void preorder(TreeNode* node,vector<int>& result){
+	void postorder(TreeNode* node,vector<int>& result){
 		if(node == nullptr)
 			return;
+		postorder(node->left,result);
+		postorder(node->right,result);
 		result.push_back(node->val);
-		preorder(node->left,result);
-		preorder(node->right,result);
 	}
     vector<int> preorderTraversal(TreeNode* root) {
 		vector<int> result;
-		preorder(root,result);
+		postorder(root,result);
 		return result;
     }
 };
