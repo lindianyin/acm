@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <limits>
 #include "dbg-macro/dbg.h"
+#include "TreeNode.h"
 using namespace std;
 class Solution{
 public:
