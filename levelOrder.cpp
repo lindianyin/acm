@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
+#include <queue>
 #include <stack>
 #include <set>
 #include <unordered_set>
@@ -20,18 +22,28 @@ struct TreeNode {
 };
 class Solution {
 public:
-	void preorder(TreeNode* node,vector<int>& result){
-		if(node == nullptr)
-			return;
-		result.push_back(node->val);
-		preorder(node->left,result);
-		preorder(node->right,result);
-	}
-    vector<int> preorderTraversal(TreeNode* root) {
-		vector<int> result;
-		preorder(root,result);
-		return result;
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector <vector <int>> ret;
+        if (!root) {
+            return ret;
+        }
+
+        queue <TreeNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            int currentLevelSize = q.size();
+            ret.push_back(vector <int> ());
+            for (int i = 1; i <= currentLevelSize; ++i) {
+                auto node = q.front(); q.pop();
+                ret.back().push_back(node->val);
+                if (node->left) q.push(node->left);
+                if (node->right) q.push(node->right);
+            }
+        }
+        
+        return ret;
     }
+	
 };
 int main(int argc,char* argv[]){
 	Solution s;
@@ -53,10 +65,7 @@ int main(int argc,char* argv[]){
 	f->right = g;
 	g->right = i;
 	i->left = h;
-	vector<int> result = s.preorderTraversal(f);
-	vector<char> out;
-	for(auto item : result)
-		out.push_back(item);
-	dbg(out);
+	auto result = s.levelOrder(f);
+	dbg(result);
 	return 0;
 }

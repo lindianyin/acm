@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
+#include <queue>
 #include <stack>
 #include <set>
 #include <unordered_set>
@@ -20,18 +22,16 @@ struct TreeNode {
 };
 class Solution {
 public:
-	void preorder(TreeNode* node,vector<int>& result){
-		if(node == nullptr)
-			return;
-		result.push_back(node->val);
-		preorder(node->left,result);
-		preorder(node->right,result);
+	int max_depth(TreeNode* root,int depth){
+		if(!root)
+			return depth-1;
+		return max(max_depth(root->left,depth+1),max_depth(root->right,depth+1));
 	}
-    vector<int> preorderTraversal(TreeNode* root) {
-		vector<int> result;
-		preorder(root,result);
-		return result;
-    }
+	int maxDepth(TreeNode* root) {
+		if(nullptr == root)
+			return 0;
+		return max_depth(root,1);	
+	}
 };
 int main(int argc,char* argv[]){
 	Solution s;
@@ -44,6 +44,7 @@ int main(int argc,char* argv[]){
 	TreeNode* g = new TreeNode('g');
 	TreeNode* h = new TreeNode('h');
 	TreeNode* i = new TreeNode('i');
+	TreeNode* j = new TreeNode('j');
 	
 	f->left = b;
 	b->left = a;
@@ -53,10 +54,8 @@ int main(int argc,char* argv[]){
 	f->right = g;
 	g->right = i;
 	i->left = h;
-	vector<int> result = s.preorderTraversal(f);
-	vector<char> out;
-	for(auto item : result)
-		out.push_back(item);
-	dbg(out);
+	h->right = j;
+	auto result = s.maxDepth(f);
+	dbg(result);
 	return 0;
 }

@@ -5,20 +5,24 @@
 #include <algorithm>
 #include <limits>
 #include <cmath>
+#ifdef DBG
 #include "dbg-macro/dbg.h"
+#endif
 using namespace std;
-
-long lpow(long m,long n,long mod){
-	if(n == 1)
-		return m;
-	int res = lpow(m*m%mod,n/2,mod);
-	if(n % 2 == 1)
-		res = res * m % mod;
-	return res;
+#define c 100000007
+long divide(long a,long b){
+	if(b == 0)
+		return 1;
+	else if (b % 2 == 0)
+		return divide((a%c)*(a%c),b/2)%c;
+	else
+		return (a%c) * divide((a%c)*(a%c),(b-1) /2) % c;
 }
 
 
 int main(int argc,char* argv[]){
-	dbg(lpow(2,10,10));
+	int n,m;
+	cin >> n >> m;
+	cout << divide(n,m)<<endl;
 	return 0;
 }

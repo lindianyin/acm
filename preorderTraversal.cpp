@@ -20,16 +20,16 @@ struct TreeNode {
 };
 class Solution {
 public:
-	void preorder(TreeNode* node,vector<int>& result){
+	void inorder(TreeNode* node,vector<int>& result){
 		if(node == nullptr)
 			return;
+		inorder(node->left,result);
 		result.push_back(node->val);
-		preorder(node->left,result);
-		preorder(node->right,result);
+		inorder(node->right,result);
 	}
-    vector<int> preorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root) {
 		vector<int> result;
-		preorder(root,result);
+		inorder(root,result);
 		return result;
     }
 };
@@ -53,7 +53,7 @@ int main(int argc,char* argv[]){
 	f->right = g;
 	g->right = i;
 	i->left = h;
-	vector<int> result = s.preorderTraversal(f);
+	vector<int> result = s.inorderTraversal(f);
 	vector<char> out;
 	for(auto item : result)
 		out.push_back(item);
