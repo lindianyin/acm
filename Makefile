@@ -10,7 +10,7 @@ objcpp = $(patsubst %.cpp, %.o, $(srcpp)) #所有的依赖文件列表, 使用空格分隔
 pp = g++
 cc = g++
  
-CPPFLAGS = -std=c++17 -g -O0 -I./
+CPPFLAGS = -std=c++17 -g -O0 -DDBG -I./
 CFLAGS = -lpthread #若要一次性把当前目录下所有.cpp/.c文件都生成可执行文件 这里要将所有需要链接的库文件都添加进来
 #也能使用多个变量,使此来区别链接哪些库！
  

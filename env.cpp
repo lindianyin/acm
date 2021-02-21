@@ -17,6 +17,9 @@ public:
 };
 
 int main(int argc,char* argv[]){
-	dbg(1);
+	while(true){
+		dbg(getenv("hello"));
+		sleep(5);
+	}
 	return 0;
 }
