@@ -12,7 +12,7 @@
 #include "TreeNode.h"
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys/prctl.h>
+//#include <sys/prctl.h>
 
 using namespace std;
 __attribute__((constructor)) void before_main() {
@@ -20,7 +20,7 @@ __attribute__((constructor)) void before_main() {
 	int childpid;
 	int status;
 	if ((childpid = fork()) == 0) {
-		prctl(PR_SET_PDEATHSIG,SIGKILL);
+		//prctl(PR_SET_PDEATHSIG,SIGKILL);
 		while(true){
 			cout << "child" << endl;
 			sleep(5);
