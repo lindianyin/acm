@@ -2,27 +2,30 @@
 #include <string>
 #include <vector>
 #include <stack>
+#include <map>
+#include <queue>
 #include <set>
 #include <unordered_set>
 #include <unordered_map>
 #include <algorithm>
 #include <limits>
+#ifdef DBG
 #include "dbg-macro/dbg.h"
+#endif
+#include "TreeNode.h"
 using namespace std;
 class Solution{
 public:
-    int singleNumber(vector<int>& nums) {
-			int m = 0;
-			for(auto item : nums){
-				m ^= item;
-			}
-			return m;
-    }
+	bool isAnagram(string s,string t){
+		sort(s.begin(),s.end());
+		sort(t.begin(),t.end());
+		return s == t;	
+	}
+	
 };
 
 int main(int argc,char* argv[]){
 	Solution s;
-	vector<int> nums = {1,1,2};
-	dbg(s.singleNumber(nums));
+	dbg(s.isAnagram("anagram","nagaram"));
 	return 0;
 }

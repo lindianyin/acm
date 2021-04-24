@@ -4,25 +4,31 @@
 #include <stack>
 #include <set>
 #include <unordered_set>
+#include <map>
 #include <unordered_map>
 #include <algorithm>
 #include <limits>
 #include "dbg-macro/dbg.h"
+#include "TreeNode.h"
 using namespace std;
 class Solution{
 public:
-    int singleNumber(vector<int>& nums) {
-			int m = 0;
-			for(auto item : nums){
-				m ^= item;
-			}
-			return m;
-    }
+	int findDuplicate(vector<int>& nums){
+		unordered_set<int> s;
+		for(int item : nums){
+			if(s.count(item))
+				return item;
+			else
+				s.insert(item);
+		}
+		return 0;
+	}
+	
 };
 
 int main(int argc,char* argv[]){
 	Solution s;
-	vector<int> nums = {1,1,2};
-	dbg(s.singleNumber(nums));
+	vector<int> nums = {1,2,1};
+	dbg(s.findDuplicate(nums));
 	return 0;
 }
