@@ -117,28 +117,31 @@ int main(int argc,char* argv[]){
 	//int y = 0;
 	printf("%hhu\n",(unsigned char)(-1));
 
-	time_t t = 1597929478;
-	double d = (double)t;
-	std::cout.precision(9);
-	std::cout << d << std::endl;
-	tars::TC_ThreadQueue<int> que;
-	que.push_back(1,true);
+	//time_t t = 1597929478;
+	//double d = (double)t;
+	//std::cout.precision(9);
+	//std::cout << d << std::endl;
+	//tars::TC_ThreadQueue<int> que;
+	//que.push_back(1,true);
 
-	std::thread th([&]{
-		for(int i= 0;i<10000000;i++)
-			que.push_back(i,true);
-			
-	});
-	std::thread th1([&]{
-		usleep(10*1000);
-		int i = 0;
-		while(que.pop_front(i,10))
-			std::cout << i << std::endl;
-			
-	});
-	//const Foo& f = getfoo();
-	th.join();
-	th1.join();
+	//std::thread th([&]{
+	//	for(int i= 0;i<10000000;i++)
+	//		que.push_back(i,true);
+	//		
+	//});
+	//std::thread th1([&]{
+	//	usleep(10*1000);
+	//	int i = 0;
+	//	while(que.pop_front(i,10))
+	//		std::cout << i << std::endl;
+	//		
+	//});
+	////const Foo& f = getfoo();
+	//th.join();
+	//th1.join();
+	unsigned int a = 0;
+	int b = ~0;
+	cout << b << endl;
 	return 0;
 }
 //
